@@ -20,14 +20,14 @@ class Atleta {
         }
     }
     calculaIMC() {
-        return (this.peso / (this.altura * this.altura)).toFixed(2);
+        return (this.peso / (this.altura * this.altura)).toFixed(14);
     }
     calculaMediaValida() {
         let notasOrdenadas = this.notas.slice().sort((a, b) => a - b);
         notasOrdenadas.pop();
         notasOrdenadas.shift();
         let soma = notasOrdenadas.reduce((acc, val) => acc + val, 0);
-        return (soma / notasOrdenadas.length).toFixed(2);
+        return (soma / notasOrdenadas.length).toFixed(8);
     }
     obterNomeAtleta() {
         return this.nome;
@@ -50,4 +50,19 @@ class Atleta {
     obtemMediaValidaAtleta() {
         return this.calculaMediaValida();
     }
+    salidaDadosAtleta() {
+        return `Nome: ${this.obterNomeAtleta()}
+Idade: ${this.obterIdadeAtleta()}
+Peso: ${this.obterPesoAtleta()} kg
+Altura: ${this.altura} m
+Notas: ${this.obterNotasAtleta().join(", ")}
+Categoria: ${this.obtemCategoriaAtleta()}
+IMC: ${this.obtemIMCAtleta()}
+Média Válida: ${this.obtemMediaValidaAtleta()} \n`;
+    }
 }
+
+const atleta1 = new Atleta("Cesar Abascal", 30, 80, 1.70, [10, 9.34, 8.42, 10, 7.88]);
+const atleta2 = new Atleta("Ana Cristina", 25, 62, 1.62, [9, 8.5, 9.5, 10, 7.5]);
+console.log(atleta1.salidaDadosAtleta());
+console.log(atleta2.salidaDadosAtleta());
