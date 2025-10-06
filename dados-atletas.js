@@ -11,11 +11,11 @@ class Atleta {
             return "Infantil";
         } else if (this.idade >= 12 && this.idade <= 13) {
             return "Juvenil";
-        }else if(this.idade >= 14 && this.idade <= 15){
+        } else if (this.idade >= 14 && this.idade <= 15) {
             return "Intermediário";
-        }else if(this.idade >= 16 && this.idade <= 30){
+        } else if (this.idade >= 16 && this.idade <= 30) {
             return "Adulto";
-        }else{
+        } else {
             return "Sem categoria";
         }
     }
