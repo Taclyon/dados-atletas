@@ -29,4 +29,25 @@ class Atleta {
         let soma = notasOrdenadas.reduce((acc, val) => acc + val, 0);
         return (soma / notasOrdenadas.length).toFixed(2);
     }
+    obterNomeAtleta() {
+        return this.nome;
+    }
+    obterIdadeAtleta() {
+        return this.idade;
+    }
+    obterPesoAtleta() {
+        return this.peso;
+    }
+    obterNotasAtleta() {
+        return this.notas;
+    }
+    obtemCategoriaAtleta() {
+        return this.calculaCategoria();
+    }
+    obtemIMCAtleta() {
+        return this.calculaIMC();
+    }
+    obtemMediaValidaAtleta() {
+        return this.calculaMediaValida();
+    }
 }
